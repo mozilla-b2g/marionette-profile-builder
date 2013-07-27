@@ -23,9 +23,10 @@ ProfileBuilder.prototype = {
   The callback will expect the typicall node style error as first argument and the path where
   the profile exists on disk as the second argument.
   
+  @param {Object} overrides for options given in constructor.
   @param {Function} callback [Error err, String profile].
   */
-  build: function(callback) {},
+  build: function(overrides, callback) {},
   
   /**
   Destroys the built profile. This method should be idempotent and handle cases where the profile was
@@ -39,9 +40,10 @@ ProfileBuilder.prototype = {
   In typical cases this is simply destroy + build but is here for special cases where the profile can simply be
   cleaned up rather then being completely removed and rewritten.
   
+  @param {Object} overrides for options given in constructor.
   @param {Function} callback [Error err, String profile].
   */
-  rebuild: function(callback) {}
+  rebuild: function(overrides, callback) {}
 };
 
 ```
