@@ -15,6 +15,8 @@ suite('ProfileBuilder', function() {
   var options = {
     prefs: { original: true }
   };
+  // profile returned by mozprofile.create
+  var profile = { path: '/path/to/profile' };
 
   setup(function() {
     subject = new ProfileBuilder(options);
@@ -26,8 +28,6 @@ suite('ProfileBuilder', function() {
 
   suite('#build', function() {
     var stub,
-        // profile returned by mozprofile.create
-        profile = { path: '/path/to/profile' },
         // overrides on the profile options
         overrides = { a: true, prefs: { override: true } },
         // expected profile options (subject.options + overrides)
@@ -86,6 +86,7 @@ suite('ProfileBuilder', function() {
     test('with profile', function(done) {
       var calledDestroy = false;
       var profile = {
+        path: '/path/to/profile',
         destroy: function(callback) {
           calledDestroy = true;
           process.nextTick(callback);
@@ -93,7 +94,8 @@ suite('ProfileBuilder', function() {
       };
 
       subject.profile = profile;
-      subject.destroy(function(err) {
+      subject.destroy(function(err, path) {
+        assert.equal(path, profile.path, 'returns path');
         assert.ok(!subject.profile, 'resets profile');
         done(err);
       });

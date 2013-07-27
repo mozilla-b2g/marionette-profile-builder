@@ -113,8 +113,10 @@ ProfileBuilder.prototype = {
       return process.nextTick(callback);
 
     this.profile.destroy(function(err) {
+      var path = this.profile.path;
+
       this.profile = null;
-      callback(err);
+      callback(err, path);
     }.bind(this));
   }
 };

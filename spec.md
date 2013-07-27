@@ -70,7 +70,7 @@ ProfileBuilder.prototype = {
 var builder = new ProfileBuilder({ prefs: {}, apps: {}, settings: {} });
 
 // notice every api returns the profile which the method operated on.
-builder.create(function(err, profile) {
+builder.create({ prefs: { ... } }, function(err, profile) {
   builder.destroy(function(err, profile) {
     
   });
