@@ -1,6 +1,6 @@
 This documented is designed to be an high level guide to what kind of api every profile builder should expose.
 
-## The API
+## The Implementation
 
 ```js
 /**
@@ -43,5 +43,19 @@ ProfileBuilder.prototype = {
   */
   rebuild: function(callback) {}
 };
+
+```
+
+## Usage
+
+```js
+var builder = new ProfileBuilder({ prefs: {}, apps: {}, settings: {} });
+
+// notice every api returns the profile which the method operated on.
+builder.create(function(err, profile) {
+  builder.destroy(function(err, profile) {
+    
+  });
+});
 
 ```
