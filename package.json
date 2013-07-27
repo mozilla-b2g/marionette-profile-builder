@@ -1,0 +1,30 @@
+{
+  "name": "marionette-profile-builder",
+  "version": "0.0.1",
+  "author": "James Lal [:lightsofapollo]",
+  "description": "Default profile builder for marionette-js-runner",
+  "main": "index.js",
+  "keywords": [
+    "marionette",
+    "marionette-js-runner",
+    "mocha",
+    "test",
+    "mozilla profile",
+    "integration"
+  ],
+  "dependencies" : {
+    "debug": "*",
+    "mozilla-profile-builder": "0.2.0-alpha"
+  },
+  "devDependencies": {
+    "mocha": "~1.12",
+    "sinon": "~1.7"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}
