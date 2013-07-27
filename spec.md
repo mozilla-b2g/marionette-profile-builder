@@ -4,7 +4,7 @@ This documented is designed to be an high level guide to what kind of api every 
 
 ```js
 /**
-@param {Options} [options] optional options typically passed directly to mozilla-profile-builder.
+@param {Options} [options] typically passed directly to mozilla-profile-builder.
 */
 function ProfileBuilder(options) {
   // copy options to this instance
@@ -33,7 +33,7 @@ ProfileBuilder.prototype = {
       a. when the property is an object on both "result" and overrides
          merge objects recursively
       b. when one or both properties are not objects copy property from
-          overrides into "result"
+         overrides into "result"
     - result is used as the particular set options for this operation.
   
   @param {Object} overrides for options given in constructor.
@@ -42,16 +42,17 @@ ProfileBuilder.prototype = {
   build: function(overrides, callback) {},
   
   /**
-  Destroys the built profile. This method should be idempotent and handle cases where the profile was
-  never created or has been destroyed already.
+  Destroys the built profile. This method should be idempotent and handle cases
+  where the profile was never created or has been destroyed already.
   
   @param {Fucntion} callback [Error err, String profile].
   */
   destroy: function(callback) {},
   
   /**
-  In typical cases this is simply destroy + build but is here for special cases where the profile can simply be
-  cleaned up rather then being completely removed and rewritten.
+  In typical cases this is simply destroy + build but is here for special cases
+  where the profile can simply be cleaned up rather then being completely 
+  removed and rewritten.
 
   See the notes on build for the override algorithm.
   
