@@ -87,20 +87,6 @@ ProfileBuilder.prototype = {
   },
 
   /**
-   * Rebuild the profile.
-   *
-   * @param {Object} overrides for default options.
-   * @param {Function} callback [Error err].
-   */
-  rebuild: function(overrides, callback) {
-    debug('rebuild');
-    this.destroy(function(err) {
-      if (err) return callback(err);
-      this.build(overrides, callback);
-    }.bind(this));
-  },
-
-  /**
    * Destroy the profile.
    *
    * @param {Function} callback [Error err].

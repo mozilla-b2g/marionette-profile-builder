@@ -12,7 +12,7 @@ function ProfileBuilder(options) {
 
 ProfileBuilder.prototype = {
   /**
-  Default options for all .builds and rebuilds.  
+  Default options for all .build[s]
 
   @type {Object}
   */
@@ -47,19 +47,7 @@ ProfileBuilder.prototype = {
   
   @param {Fucntion} callback [Error err, String profile].
   */
-  destroy: function(callback) {},
-  
-  /**
-  In typical cases this is simply destroy + build but is here for special cases
-  where the profile can simply be cleaned up rather then being completely 
-  removed and rewritten.
-
-  See the notes on build for the override algorithm.
-  
-  @param {Object} overrides for options given in constructor.
-  @param {Function} callback [Error err, String profile].
-  */
-  rebuild: function(overrides, callback) {}
+  destroy: function(callback) {}
 };
 
 ```
@@ -70,7 +58,7 @@ ProfileBuilder.prototype = {
 var builder = new ProfileBuilder({ prefs: {}, apps: {}, settings: {} });
 
 // notice every api returns the profile which the method operated on.
-builder.create({ prefs: { ... } }, function(err, profile) {
+builder.build({ prefs: { ... } }, function(err, profile) {
   builder.destroy(function(err, profile) {
     
   });

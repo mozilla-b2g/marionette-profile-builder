@@ -64,20 +64,6 @@ suite('ProfileBuilder', function() {
     });
   });
 
-  test('#rebuild', function(done) {
-    var build = sinon.stub(subject, 'build'),
-        destroy = sinon.stub(subject, 'destroy');
-
-    build.callsArgWithAsync(1);
-    destroy.callsArgWithAsync(0);
-
-    var overrides = { a: true };
-    subject.rebuild(overrides, function() {
-      assert.calledWith(build, overrides);
-      done();
-    });
-  });
-
   suite('#destroy', function() {
     test('without profile', function(done) {
       subject.destroy(done);
