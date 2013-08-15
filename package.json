@@ -14,7 +14,7 @@
   ],
   "dependencies" : {
     "debug": "*",
-    "mozilla-profile-builder": "0.2.0-alpha"
+    "mozilla-profile-builder": "0.3.0"
   },
   "devDependencies": {
     "mocha": "~1.12",
