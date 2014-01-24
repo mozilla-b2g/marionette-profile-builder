@@ -1,6 +1,6 @@
 {
   "name": "marionette-profile-builder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "James Lal [:lightsofapollo]",
   "description": "Default profile builder for marionette-js-runner",
   "main": "index.js",
@@ -14,7 +14,7 @@
   ],
   "dependencies" : {
     "debug": "*",
-    "mozilla-profile-builder": "0.3.0"
+    "mozilla-profile-builder": "0.4.0"
   },
   "devDependencies": {
     "mocha": "~1.12",
