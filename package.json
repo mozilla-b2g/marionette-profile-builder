@@ -1,6 +1,6 @@
 {
   "name": "marionette-profile-builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "James Lal [:lightsofapollo]",
   "description": "Default profile builder for marionette-js-runner",
   "main": "index.js",
